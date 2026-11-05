@@ -1,57 +1,63 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ادفع للكنيسة</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حسابات كنيسة مارمينا العجايبي</title>
 <style>
-*{box-sizing:border-box}body{margin:0;background:#f5f7fa;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:#17202a}
-.container{max-width:560px;margin:auto;padding:24px 16px 40px}
-.header{background:#fff;border-radius:24px;padding:24px;text-align:center;box-shadow:0 6px 22px rgba(0,0,0,.07);margin-bottom:18px}
-.logo{width:70px;height:70px;border-radius:50%;margin:auto;background:#222;color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800}
-h1{font-size:25px;margin:14px 0 6px}.sub{color:#697586;font-size:14px}
-.card{background:#fff;border-radius:22px;padding:20px;margin:14px 0;box-shadow:0 5px 18px rgba(0,0,0,.06)}
-.bank{font-size:19px;font-weight:800;margin-bottom:3px}.beneficiary{color:#66717d;font-size:14px;margin-bottom:18px}
-.row{margin:12px 0}.label{font-size:12px;color:#697586;margin-bottom:6px}
-.line{display:flex;gap:8px;align-items:center;direction:ltr}
-.value{flex:1;background:#f0f2f5;border-radius:12px;padding:12px;font-size:13px;overflow-wrap:anywhere}
-.copy{background:#222;color:#fff;border:0;border-radius:11px;padding:11px 14px;font-weight:800}
-.copy.ok{background:#168a45}
-.small{font-size:11px;color:#7a8490;text-align:center;margin-top:18px;line-height:1.6}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Tahoma,sans-serif;background:#f5f1e8;color:#222}
+.container{max-width:760px;margin:0 auto;padding:28px 18px 45px}
+.header{text-align:center;background:#fff;border-radius:20px;padding:24px 18px;box-shadow:0 5px 20px #00000012;margin-bottom:20px}
+h1{margin:0 0 8px;font-size:28px;color:#8a5a18}
+h2{margin:0;font-size:20px;color:#555}
+.card{background:#fff;border-radius:18px;padding:20px;margin:16px 0;box-shadow:0 4px 18px #00000012}
+.bank{font-size:23px;font-weight:700;color:#8a5a18;margin-bottom:18px}
+.row{display:flex;gap:10px;align-items:center;margin:10px 0;padding:12px;background:#fafafa;border:1px solid #eee;border-radius:12px;direction:ltr}
+.label{font-weight:700;min-width:125px;text-align:left;color:#555}
+.value{flex:1;word-break:break-word;text-align:left;font-weight:600}
+button{border:0;border-radius:9px;padding:9px 13px;background:#8a5a18;color:#fff;font-weight:700;cursor:pointer}
+button:active{transform:scale(.98)}
+.note{text-align:center;color:#666;margin-top:18px;font-size:14px}
+.copied{background:#26734d!important}
+@media(max-width:560px){.row{flex-wrap:wrap}.label{min-width:100px}.value{min-width:calc(100% - 110px)}button{margin-right:auto}}
 </style>
 </head>
 <body>
 <div class="container">
-<div class="header">
-<div class="logo">M</div>
-<h1>ادفع للكنيسة</h1>
-<div class="sub">بيانات الحسابات البنكية — اضغط COPY لنسخ أي بيان</div>
-</div>
+  <div class="header">
+    <h1>حسابات الكنيسة</h1>
+    <h2>MARMINA ELAGAIBI CHURCH ACCOUNTS – WESAL COMPOUND</h2>
+  </div>
 
-<div class="card">
-<div class="bank">QNB</div>
-<div class="beneficiary">MARMINA ELAGAIBI CHURCH</div>
-<div class="row"><div class="label">رقم الحساب</div><div class="line"><div class="value" id="qacc">20314625547</div><button class="copy" onclick="cp('qacc',this)">COPY</button></div></div>
-<div class="row"><div class="label">IBAN</div><div class="line"><div class="value" id="qiban">EG440037072608182031462554731</div><button class="copy" onclick="cp('qiban',this)">COPY</button></div></div>
-<div class="row"><div class="label">SWIFT</div><div class="line"><div class="value" id="qswift">QNBAEGCX</div><button class="copy" onclick="cp('qswift',this)">COPY</button></div></div>
-</div>
+  <div class="card">
+    <div class="bank">QNB</div>
+    <div class="row"><div class="label">اسم الحساب</div><div class="value">MARMINA ELAGAIBI CHURCH</div><button onclick="copyText(this,'MARMINA ELAGAIBI CHURCH')">COPY</button></div>
+    <div class="row"><div class="label">رقم الحساب</div><div class="value">20314625547</div><button onclick="copyText(this,'20314625547')">COPY</button></div>
+    <div class="row"><div class="label">IBAN</div><div class="value">EG440037072608182031462554731</div><button onclick="copyText(this,'EG440037072608182031462554731')">COPY</button></div>
+    <div class="row"><div class="label">SWIFT</div><div class="value">QNBAEGCX</div><button onclick="copyText(this,'QNBAEGCX')">COPY</button></div>
+  </div>
 
-<div class="card">
-<div class="bank">البنك العربي الأفريقي الدولي</div>
-<div class="beneficiary">Church of St Mina</div>
-<div class="row"><div class="label">رقم الحساب</div><div class="line"><div class="value" id="aacc">1178941810010201</div><button class="copy" onclick="cp('aacc',this)">COPY</button></div></div>
-<div class="row"><div class="label">IBAN</div><div class="line"><div class="value" id="aiban">EG18005709310117894181001</div><button class="copy" onclick="cp('aiban',this)">COPY</button></div></div>
-<div class="row"><div class="label">SWIFT</div><div class="line"><div class="value" id="aswift">ARAIEGCXXX</div><button class="copy" onclick="cp('aswift',this)">COPY</button></div></div>
-<div class="row"><div class="label">الفرع</div><div class="line"><div class="value" id="abranch">Ninety Street Branch — 931</div><button class="copy" onclick="cp('abranch',this)">COPY</button></div></div>
-</div>
+  <div class="card">
+    <div class="bank">Arab African International Bank</div>
+    <div class="row"><div class="label">اسم الحساب</div><div class="value">Church of St Mina</div><button onclick="copyText(this,'Church of St Mina')">COPY</button></div>
+    <div class="row"><div class="label">رقم الحساب</div><div class="value">1178941810010201</div><button onclick="copyText(this,'1178941810010201')">COPY</button></div>
+    <div class="row"><div class="label">IBAN</div><div class="value">EG18005709310117894181001</div><button onclick="copyText(this,'EG18005709310117894181001')">COPY</button></div>
+    <div class="row"><div class="label">SWIFT</div><div class="value">ARAIEGCXXX</div><button onclick="copyText(this,'ARAIEGCXXX')">COPY</button></div>
+    <div class="row"><div class="label">الفرع</div><div class="value">Ninety Street branch</div><button onclick="copyText(this,'Ninety Street branch')">COPY</button></div>
+    <div class="row"><div class="label">Branch Code</div><div class="value">931</div><button onclick="copyText(this,'931')">COPY</button></div>
+  </div>
 
-<div class="small">بعد نسخ البيانات، افتح InstaPay واختر Send Money ثم Bank Account والصق البيانات المطلوبة. هذه الصفحة لا تنشئ رابط دفع رسمي من InstaPay.</div>
+  <div class="note">اضغط COPY لنسخ أي بيانات لاستخدامها بسهولة في InstaPay.</div>
 </div>
 <script>
-async function cp(id,b){
- const t=document.getElementById(id).textContent.trim();
- try{await navigator.clipboard.writeText(t)}catch(e){let x=document.createElement('textarea');x.value=t;document.body.appendChild(x);x.select();document.execCommand('copy');x.remove()}
- b.textContent='COPIED ✓';b.classList.add('ok');setTimeout(()=>{b.textContent='COPY';b.classList.remove('ok')},1200)
+async function copyText(btn,text){
+  try{await navigator.clipboard.writeText(text);}
+  catch(e){
+    const t=document.createElement('textarea');t.value=text;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove();
+  }
+  const old=btn.textContent;btn.textContent='COPIED ✓';btn.classList.add('copied');
+  setTimeout(()=>{btn.textContent=old;btn.classList.remove('copied')},1200);
 }
 </script>
 </body>
